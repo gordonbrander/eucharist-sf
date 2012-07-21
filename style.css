@@ -55,13 +55,13 @@ table {
 .alignright {
     float: right;
     /* Pull out 1 grid unit. */
-    margin: 0 -80px 18px 20px;
+    margin: 0 0 18px 20px;
 }
 
 .alignleft {
     float: left;
     /* Pull out 1 grid unit. */
-    margin: 0 20px 18px -80px;
+    margin: 0 20px 18px 0;
 }
 
 .aligncenter {
