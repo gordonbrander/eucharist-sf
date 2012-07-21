@@ -379,14 +379,16 @@ because webkit doesn't crop for border-radius on boxes. */
 
 .carousel--slide-content .in {
     font-size: 15px;
-    line-height: 18px
-    -moz-column-gap: 20px;
-    -webkit-column-gap: 20px; /* Saf, Chrome, iOS */
-    column-gap: 20px; /* Standard (someday) */
-    -moz-column-count: 3;
-    -webkit-column-count: 3; /* Saf, Chrome, iOS */
-    column-count: 3; /* Standard */
-    padding: 17px 19px;
+    line-height: 18px;
+    width: ;
+    padding: 17px 9px;
+}
+
+.carousel--slide-content p {
+    float: left;
+    width: 31.3152401%;
+    margin-left:  1.04384130%;
+    margin-right: 1.04384130%;
 }
 
 /* Usage: `.ir.ir--button-prev`. */
@@ -520,4 +522,21 @@ because webkit doesn't crop for border-radius on boxes. */
     font-size: 12px;
     margin-top: 27px;
     padding-top: 17px;
+}
+
+/* Responsive adjustments
+----------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1040px) {
+    .carousel {
+        height: 475px;
+    }
+
+    .carousel--slide-content .in {
+        font-size: 14px;
+    }
+
+    .entry--page .media {
+        width: 896px;
+    }
 }

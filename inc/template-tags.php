@@ -14,7 +14,7 @@ function eusf_format($str) {
     return $str;
 }
 
-function eusf_markup() {
+function eusf_markup($str) {
     $str = eusf_format($str);
     return wpautop($str);
 }

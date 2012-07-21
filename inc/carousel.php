@@ -28,7 +28,7 @@ class EUSF_Gallery {
         $url = get_post_meta($attachment->ID, '_eusf_url', true);
         $slide = $url ? '<a href="'.$url.'">'.$img.'</a>' : $img;
 
-        $content = eusf_format($attachment->post_content);
+        $content = eusf_markup($attachment->post_content);
 
         $classes = $i === 0 ? 'active item' : 'item';
 
