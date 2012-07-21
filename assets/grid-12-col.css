@@ -38,6 +38,10 @@ Note: IE6 works fine without this fix.
   }
 }
 
+@media only screen and (max-width: 900px) {
+
+}
+
 /* `Grid >> Global
 ----------------------------------------------------------------------------- */
 
