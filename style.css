@@ -387,8 +387,8 @@ because webkit doesn't crop for border-radius on boxes. */
 .carousel--slide-content p {
     float: left;
     width: 31.3152401%;
-    margin-left:  1.04384130%;
-    margin-right: 1.04384130%;
+    margin-left:  1.00%;
+    margin-right: 1.00%;
 }
 
 /* Usage: `.ir.ir--button-prev`. */
