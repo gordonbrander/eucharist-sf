@@ -523,20 +523,3 @@ because webkit doesn't crop for border-radius on boxes. */
     margin-top: 27px;
     padding-top: 17px;
 }
-
-/* Responsive adjustments
------------------------------------------------------------------------------ */
-
-@media only screen and (max-width: 1040px) {
-    .carousel {
-        height: 475px;
-    }
-
-    .carousel--slide-content .in {
-        font-size: 14px;
-    }
-
-    .entry--page .media {
-        width: 896px;
-    }
-}
