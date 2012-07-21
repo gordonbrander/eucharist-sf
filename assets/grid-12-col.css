@@ -28,16 +28,6 @@ Note: IE6 works fine without this fix.
   width: 960px;
 }
 
-@media only screen and (max-width: 1040px) {
-  .container {
-    width: 900px;
-  }
-
-  .units {
-    width: 880px;
-  }
-}
-
 /* `Grid >> Global
 ----------------------------------------------------------------------------- */
 
