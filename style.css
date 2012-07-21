@@ -1,0 +1,540 @@
+/*
+Theme Name: Eucharist SF
+Author: Gordon Brander
+Author URI: http://gordonbrander.com
+Description: Eucharist church website.
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+*/
+
+/* Typography and Basics
+----------------------------------------------------------------------------- */
+
+html {
+    background: #ecebda url(assets/img/bg.png) 0 0 repeat-x;
+    color: #444;
+    font: 14px/1.285714286 "Trebuchet MS", sans-serif;
+}
+
+body {
+    padding: 0 30px;
+}
+
+a {
+    color: #d2850e;
+    text-decoration: none;
+}
+
+/* Set up vertical rythmn for text tags.
+**Margins and line heights should always be specified in multiples of 9**. */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+li {
+    margin-top: 0;
+    margin-bottom: 9px;
+}
+
+p,
+ul,
+ol,
+dl,
+table {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* Utility
+----------------------------------------------------------------------------- */
+
+/* Required WordPress classes */
+.alignright {
+    float: right;
+    /* Pull out 1 grid unit. */
+    margin: 0 -80px 18px 20px;
+}
+
+.alignleft {
+    float: left;
+    /* Pull out 1 grid unit. */
+    margin: 0 20px 18px -80px;
+}
+
+.aligncenter {
+    margin: 0 auto 18px;
+}
+
+.wp-caption {
+    background: #faf9ed;
+    border: 1px solid #D5D3C4;
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .1); /* FF3.5+ */
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .1); /* Saf3+, Chrome */
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1); /* Standard. Opera 10.5, IE9 */
+    -moz-border-radius: 3px; /* FF1+ */
+    -webkit-border-radius: 3px; /* Saf3+, Chrome, iOS */
+    border-radius: 3px; /* Standard, IE9 */
+}
+.wp-caption.alignright {
+    -moz-transform: rotate(5deg); /* FF3.5+ */
+    -webkit-transform: rotate(5deg); /* Saf3.1+, Chrome */
+    -o-transform: rotate(5deg); /* Opera 10.5 */
+    transform: rotate(5deg);
+}
+.wp-caption.alignleft {
+    -moz-transform: rotate(-5deg); /* FF3.5+ */
+    -webkit-transform: rotate(-5deg); /* Saf3.1+, Chrome */
+    -o-transform: rotate(-5deg); /* Opera 10.5 */
+    transform: rotate(-5deg);    
+}
+.wp-caption img {
+    display: block;
+    margin: 5px;
+}
+.wp-caption-text {
+    color: #777;
+    font-size: 12px;
+    margin: 5px;
+}
+
+/* For image replacement */
+.ir {
+    display: block;
+    border: 0;
+    text-indent: -999em;
+    overflow: hidden;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    text-align: left;
+    direction: ltr;
+}
+.ir br { display: none; }
+
+.assistive-text {
+    left: -999em;
+    position: absolute;
+    width: 1em;
+}
+
+/* Menus and navigation
+----------------------------------------------------------------------------- */
+
+/* `.menu` - horizontal list helper with dropdown styles. This class covers the
+basics, and you should create compound classes to style the dropdowns.
+
+Usage:
+
+    <ul class="menu">
+      <li>...</li>
+    </ul>
+*/
+
+/* Nuke standard list styles */
+.menu, 
+.sub-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menus should be self-clearing, using the micro clearfix hack. */
+.menu {
+    *zoom: 1;
+}
+.menu:before,
+.menu:after {
+    display: table;
+    content: "";
+}
+.menu:after {
+    clear: both;
+}
+
+.menu > li {
+    float: left;
+    margin-bottom: 0;
+}
+.menu > li > a {
+    display: block;
+}
+
+/* Dropdown menus */
+.sub-menu {
+    left: -999em;
+    position: absolute;
+    width: 220px;
+    z-index: 999;
+}
+
+li:hover .sub-menu {
+    display: block;
+    left: auto;
+}
+
+/* Primary (header) navigation styles */
+.nav--primary {
+    background: url(assets/img/a-vertical--sprite.png) 0 0 repeat-x;
+    border: 1px solid #d5d3c4;
+    -moz-border-radius-topleft: 5px; /* FF1+ */
+    -webkit-border-top-left-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-top-left-radius: 5px; /* Standard, IE9 */
+    -moz-border-radius-topright: 5px; /* FF1+ */
+    -webkit-border-top-right-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-top-right-radius: 5px; /* Standard, IE9 */
+    bottom: 0;
+    height: 36px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+.nav--primary > .menu > .menu-item > a {
+    border-right: 1px solid #d5d3c4;
+    color: #777;
+    font-size: 13px;
+    line-height: 36px;
+    padding: 0 20px;
+    text-shadow: rgba(255,255,255, .9) 0 1px 0;
+}
+.nav--primary > .menu > .menu-item:hover {
+    background: #faf9ed;
+    border-bottom: 1px solid #faf9ed;
+}
+.nav--primary .menu-item:first-child {
+    -moz-border-radius-topleft: 5px; /* FF1+ */
+    -webkit-border-top-left-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-top-left-radius: 5px; /* Standard, IE9 */
+}
+
+.nav--primary .sub-menu {
+    background: #faf9ed;
+    -moz-border-radius-bottomright: 5px; /* FF1+ */
+    -webkit-border-bottom-right-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-right-radius: 5px; /* Standard, IE9 */
+    -moz-border-radius-bottomleft: 5px; /* FF1+ */
+    -webkit-border-bottom-left-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-left-radius: 5px; /* Standard, IE9 */
+    /**
+     * @bugfix border-radius background bleed
+     * @see http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed
+     */
+    -webkit-background-clip: padding-box;
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* FF3.5+ */
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Saf3+, Chrome */
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3); /* Standard. Opera 10.5, IE9 */
+    margin-top: 1px;
+    overflow: hidden;
+}
+/* Bugfix for webkit */
+.sub-menu li:last-child a {
+    -moz-border-radius-bottomright: 5px; /* FF1+ */
+    -webkit-border-bottom-right-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-right-radius: 5px; /* Standard, IE9 */
+    -moz-border-radius-bottomleft: 5px; /* FF1+ */
+    -webkit-border-bottom-left-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-left-radius: 5px; /* Standard, IE9 */    
+}
+
+.nav--primary .sub-menu li {
+    background: url(assets/img/sub-menu-divider.png) no-repeat 0 top;
+    margin: 0;
+    padding: 1px 0 0;
+}
+.nav--primary .sub-menu li:first-child {
+    background: transparent;
+}
+
+.nav--primary .sub-menu a {
+    /* Pre-load, but don't show background image. */
+    background: url(assets/img/sub-menu-highlight.png) -900px 0 repeat-y;
+    color: #662305;
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 9px 20px 10px;
+}
+.nav--primary .sub-menu a:hover {
+    /* Move background into visible area. */
+    background-position: 0 0;
+    -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); /* FF3.5+ */
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); /* Saf3+, Chrome */
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); /* Standard. Opera 10.5, IE9 */
+}
+
+/* Page Modules
+----------------------------------------------------------------------------- */
+
+/* Alternative units treatment -- like a white page */
+.units--page {
+    background: #fff;
+    border: 1px solid #d5d3c4;
+    border-top: 0;
+    -moz-border-radius-bottomleft: 5px; /* FF1+ */
+    -webkit-border-bottom-left-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-left-radius: 5px; /* Standard, IE9 */
+    -moz-border-radius-bottomright: 5px; /* FF1+ */
+    -webkit-border-bottom-right-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-right-radius: 5px; /* Standard, IE9 */
+    margin-bottom: 36px;
+    padding: 1px 9px 0;
+}
+
+/* Carousel
+----------------------------------------------------------------------------- */
+
+.carousel,
+/* Unfortunately, we have to border-radius the image rather than the box
+because webkit doesn't crop for border-radius on boxes. */
+.carousel--slides img {
+    height: auto;
+    max-width: 100%;
+    -moz-border-radius-bottomleft: 5px; /* FF1+ */
+    -webkit-border-bottom-left-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-left-radius: 5px; /* Standard, IE9 */
+    -moz-border-radius-bottomright: 5px; /* FF1+ */
+    -webkit-border-bottom-right-radius: 5px; /* Saf3+, Chrome, iOS */
+    border-bottom-right-radius: 5px; /* Standard, IE9 */
+}
+
+.carousel {
+    background: #fff;
+    border: 1px solid #d5d3c4;
+    border-top: 0;
+    margin-bottom: 36px;
+    height: 518px;
+    padding: 1px;
+    /* Contain absolutely positioned pagination */
+    position: relative;
+}
+
+.carousel--slides {
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    /* Contain absolute elements */
+    position: relative;
+    width: 100%;
+}
+
+.carousel .item {
+    /* CSS transitions
+    developer.mozilla.org/en/CSS/transition */
+    -moz-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* FF 4.0+ */
+    -ms-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Metro, IE10 */
+    -webkit-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Chrome 1.0+, Saf 3.0+ */
+    -o-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Opera Presto 2.3+ */
+    transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Standard */
+    margin: 0;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+
+.carousel--slides .next,
+.carousel--slides .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel--slides .active,
+.carousel--slides .next,
+.carousel--slides .prev {
+    display: block;
+}
+
+.carousel--slides .item img {
+    display: block;
+}
+
+.carousel--slides .next.left,
+.carousel--slides .prev.right {
+    left: 0;
+}
+.carousel--slides .active.left,
+.carousel--slides .prev {
+    left: -100%;
+}
+.carousel--slides .active.right,
+.carousel--slides .next {
+    left: 100%;
+}
+
+.carousel--slide-content {
+    background: #fff;
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .5); /* FF3.5+ */
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .5); /* Saf3+, Chrome */
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5); /* Standard. Opera 10.5, IE9 */
+    bottom: 15px;
+    height: 108px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
+
+.carousel--slide-content .in {
+    font-size: 15px;
+    line-height: 18px
+    -moz-column-gap: 20px;
+    -webkit-column-gap: 20px; /* Saf, Chrome, iOS */
+    column-gap: 20px; /* Standard (someday) */
+    -moz-column-count: 3;
+    -webkit-column-count: 3; /* Saf, Chrome, iOS */
+    column-count: 3; /* Standard */
+    padding: 17px 19px;
+}
+
+/* Usage: `.ir.ir--button-prev`. */
+.ir--button-prev,
+.ir--button-next {
+    background-image: url(assets/img/a-vertical--sprite.png);
+    height: 114px;
+    width: 33px;
+}
+.ir--button-prev {
+    background-position: 0 -300px;
+}
+.ir--button-prev:hover {
+    background-position: 0 -700px;
+}
+.ir--button-next {
+    background-position: 0 -100px;   
+}
+.ir--button-next:hover {
+    background-position: 0 -500px;   
+}
+
+.carousel .ir--button-prev,
+.carousel .ir--button-next {
+    position: absolute;
+}
+
+.carousel .ir--button-prev {
+    left: -34px;
+    bottom: 13px;
+}
+
+.carousel .ir--button-next {
+    right: -34px;
+    bottom: 13px;
+}
+
+/* Content styles
+----------------------------------------------------------------------------- */
+
+.title {
+    color: #ba4e1c;
+    font-weight: normal;
+}
+.content {
+    /* Using margin collapse, keep a consistent bottom margin, regardless of
+    whether a margined tag is used inside. */
+    margin-bottom: 18px;
+}
+
+/* Pullquotes (`.pull`). */
+.pull {
+    border: 1px solid #deddd3;
+    border-width: 1px 0;
+    color: #777;
+    display: block;
+    float: left;
+    font: normal normal 18px/27px Georgia, serif;
+    /* Pull out 1 grid unit. */
+    margin: 0 20px 18px -160px;
+    /* 1px border + 8px padding = 9px. */
+    padding: 8px 0;
+    /* Fix width at 3 grid units. */
+    width: 220px;
+}
+.pull p {
+    margin-bottom: 0;
+}
+
+.entry--page .media {
+    margin: 0 0 0 -8px;
+    width: 978px;
+}
+.entry--page .media img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.entry--page .in {
+    padding-bottom: 124px;
+    padding-top: 70px;
+}
+
+.entry--page .title {
+  font-size: 24px;
+  line-height: 1.125; /* 27px (27/24) */
+  margin-bottom: 27px;
+}
+
+/* Widgets
+----------------------------------------------------------------------------- */
+
+.widget {
+    font-size: 12px;
+    line-height: 1.5; /* 18px */
+    margin-bottom: 18px;
+}
+.widget .title {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Structure
+----------------------------------------------------------------------------- */
+
+#header {
+    height: 153px;
+    /* Contain top margins */
+    padding-top: 1px;
+    /* Contain absolute elements */
+    position: relative;
+}
+
+#logo {
+    left: -120px;
+    position: absolute;
+}
+
+#logo a {
+    outline: 0;
+}
+
+#footer {
+    margin-bottom: 36px;
+}
+
+#footer .legal {
+    border-top: 1px solid #d5d3c4;
+    color: #777;
+    font-size: 12px;
+    margin-top: 27px;
+    padding-top: 17px;
+}
+
+/* Responsive adjustments
+----------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1040px) {
+    .carousel {
+        height: 475px;
+    }
+
+    .carousel--slide-content .in {
+        font-size: 14px;
+    }
+
+    .entry--page .media {
+        width: 896px;
+    }
+}
