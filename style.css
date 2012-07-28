@@ -322,11 +322,11 @@ because webkit doesn't crop for border-radius on boxes. */
 .carousel .item {
     /* CSS transitions
     developer.mozilla.org/en/CSS/transition */
-    -moz-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* FF 4.0+ */
-    -ms-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Metro, IE10 */
-    -webkit-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Chrome 1.0+, Saf 3.0+ */
-    -o-transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Opera Presto 2.3+ */
-    transition: left 600ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Standard */
+    -moz-transition: left cubic-bezier(0.250, 0.460, 0.450, 0.940) 600ms; /* FF 4.0+ */
+    -ms-transition: left cubic-bezier(0.250, 0.460, 0.450, 0.940) 600ms; /* Metro, IE10 */
+    -webkit-transition: left cubic-bezier(0.250, 0.460, 0.450, 0.940) 600ms; /* Chrome 1.0+, Saf 3.0+ */
+    -o-transition: left cubic-bezier(0.250, 0.460, 0.450, 0.940) 600ms; /* Opera Presto 2.3+ */
+    transition: left cubic-bezier(0.250, 0.460, 0.450, 0.940) 600ms; /* Standard */
     margin: 0;
     overflow: hidden;
     display: none;
@@ -342,10 +342,7 @@ because webkit doesn't crop for border-radius on boxes. */
 
 .carousel--slides .active,
 .carousel--slides .next,
-.carousel--slides .prev {
-    display: block;
-}
-
+.carousel--slides .prev,
 .carousel--slides .item img {
     display: block;
 }
