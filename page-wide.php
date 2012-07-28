@@ -1,5 +1,5 @@
 <?php
-// Template Name: Wide
+// Template Name: Extra-Wide Page
 // A page template with an extra-wide content area. Great for large videos,
 // calendars, etc.
 get_header(); ?>
