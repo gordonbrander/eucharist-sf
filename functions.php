@@ -30,13 +30,23 @@ function eusf_setup() {
     require_once(EUSF_DIR . 'inc/carousel.php' );
     require_once(EUSF_DIR . 'inc/attachment-custom-fields.php' );
 
+    // Create media field for carousel page URL
     $attachment_url_field = new EUSF_Attachment_Custom_Field('eusf_url', array(
         'label' => __('Carousel URL', 'eusf'),
         'helps' => __('Entering a URL here will cause the attachment to be linked when displayed in the carousel.', 'eusf'),
         'input' => 'text'
     ), 'esc_url');
-
+    // Attach hooks for field.
     $attachment_url_field->attach_hooks();
+
+    // Create media field for carousel page URL
+    $attachment_attribution_url_field = new EUSF_Attachment_Custom_Field('eusf_attribution_url', array(
+        'label' => __('Photo Credit URL', 'eusf'),
+        'helps' => __('If you&rsquo;re using Creative Commons licensed photography provide a link back to the original source. A credit link will automatically be displayed for the image.', 'eusf'),
+        'input' => 'text'
+    ), 'esc_url');
+    // Attach hooks for field.
+    $attachment_attribution_url_field->attach_hooks();
 
     // Add default posts and comments RSS feed links to <head>.
     add_theme_support( 'automatic-feed-links' );
