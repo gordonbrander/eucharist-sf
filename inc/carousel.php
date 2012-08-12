@@ -1,6 +1,7 @@
 <?php
+require_once(EUSF_DIR.'inc/attachment-views.php');
+
 // Handles getting and rendering items for the carousel.
-// 
 class EUSF_Gallery {
     function __construct($post_id) {
         $this->post_id = $post_id;
@@ -24,9 +25,7 @@ class EUSF_Gallery {
     function view_slide($attachment, $i) {
         $id = $attachment->ID;
 
-        $img = wp_get_attachment_image($id, 'hero', false);
-        $url = get_post_meta($attachment->ID, '_eusf_url', true);
-        $slide = $url ? '<a href="'.$url.'">'.$img.'</a>' : $img;
+        $slide = eusf_view_attachment($id, 'hero', 'url');
 
         $content = eusf_markup($attachment->post_content);
 
